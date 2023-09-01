@@ -41,6 +41,16 @@
 				<td th:text="${tempEmployee.lastName}" />	
 				<td th:text="${tempEmployee.email}" />
 
+				<td>
+
+					<a th:href="@{/showFormForUpdate(employeeId=${tempEmployee.id})}"
+					class="btn btn-info btn-sm">
+						Update
+					</a>
+
+
+				</td>
+
 
 
 				
