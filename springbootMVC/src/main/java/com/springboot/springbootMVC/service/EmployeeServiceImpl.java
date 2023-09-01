@@ -9,11 +9,11 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class EmployeServiceImpl implements EmployeeService{
+public class EmployeeServiceImpl implements EmployeeService{
 
     private EmployeeRepository employeeRepository;
     @Autowired
-    public EmployeServiceImpl(EmployeeRepository theemployeeRepository) {
+    public EmployeeServiceImpl(EmployeeRepository theemployeeRepository) {
         this.employeeRepository = theemployeeRepository;
     }
 

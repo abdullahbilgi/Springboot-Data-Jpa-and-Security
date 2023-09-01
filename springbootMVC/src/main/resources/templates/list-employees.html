@@ -48,6 +48,12 @@
 						Update
 					</a>
 
+					<a th:href="@{/delete(employeeId=${tempEmployee.id})}"
+					class="btn btn-danger btn-sm"
+					onclick="if (!(confirm('Are you sure you want to delete this employee?'))) return false">
+						Delete
+					</a>
+
 
 				</td>
 
