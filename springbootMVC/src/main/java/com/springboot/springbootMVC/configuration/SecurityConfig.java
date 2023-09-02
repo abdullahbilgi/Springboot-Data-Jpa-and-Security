@@ -33,6 +33,10 @@ public class SecurityConfig {
         http.authorizeHttpRequests(configuer ->
                 configuer
                         .requestMatchers("/").hasRole("EMPLOYEE")
+                        .requestMatchers("/showFormForAdd/**").hasRole("MANAGER")
+                        .requestMatchers("/save/**").hasRole("MANAGER")
+                        .requestMatchers("/showFormForUpdate/**").hasRole("MANAGER")
+                        .requestMatchers("/delete/**").hasRole("ADMIN")
                         .anyRequest().authenticated()
         )
                 .formLogin(form ->
@@ -43,6 +47,9 @@ public class SecurityConfig {
                 )
                 .logout(logout ->
                         logout.permitAll()
+                )
+                .exceptionHandling(configurer ->
+                        configurer.accessDeniedPage("/access-denied")
                 );
 
 
